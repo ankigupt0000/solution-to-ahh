@@ -1,1 +1,1 @@
-
+Extracted video from the player by right clicking on video and clicking "Export Clip" and start running the video till end. this will export the video to location p rovided in menu "Options->Misc -> Export path"
