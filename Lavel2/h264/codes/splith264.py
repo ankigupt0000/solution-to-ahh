@@ -1,10 +1,10 @@
 import sys
 f=open('..\\input\\20140726_040000_ps.h264','rb')
 target=[
-        open('..\\output\\other1.h264','wb'),
-        open('..\\output\\other2.h264','wb'),
-        open('..\\output\\other3.h264','wb'),
-        open('..\\output\\other4.h264','wb')
+        open('..\\output\\file1.h264','wb'),
+        open('..\\output\\file2.h264','wb'),
+        open('..\\output\\file3.h264','wb'),
+        open('..\\output\\file4.h264','wb')
         ]
 last4=[0,0,0,0]
 plast4=[0,0,0,0]
