@@ -1,4 +1,4 @@
-The script should run on windows environment having ffmpeg and py (python v3) interpreter in path. There is a shell script which does all the stuff. System should have enough memory so that program running can hold fill h264 video at a time.
+The script should run on windows environment having ffmpeg and py (python v3) interpreter in path. There is a batch script which does all the stuff. System should have enough memory so that python program running can hold fill h264 video at a time.
 Final mp4 will be available in output folder.
 
 I was able to convert the whole "20140726_040000_ps.h264" file to single mp4 thorugh ffmpeg.
