@@ -1,4 +1,15 @@
+# need python 3 to run
 import sys
+
+def PrintProgress(length,percent):
+        prog='['+('#'*int(percent*float(length/100))).ljust(length,'-')+']'+str(int(percent)).rjust(4,' ')+'% Complete'
+        sys.stdout.write(prog)
+        sys.stdout.write('\b'*len(prog))
+        sys.stdout.flush()
+        if percent==100:
+                sys.stdout.write('\n')
+
+
 f=open('..\\input\\20140726_040000_ps.h264','rb')
 target=[
         open('..\\output\\file1.h264','wb'),
@@ -14,11 +25,12 @@ count=0
 pcount=0
 try:
         byte=f.read()
+        PrintProgress(50,0)
         lst=byte.split(b'\x00\x00\x01')
-        print(len(lst))
         b=0
         file=0
-        for b in range(len(lst)):
+        length=len(lst)
+        for b in range(length):
                 if (lst[b])[:1]==b'\x65' and lst[b-1][5:6] == b'\x00':
                         meta=int.from_bytes((lst[b-1])[3:4],byteorder='big')
                         pmeta=int.from_bytes(lst[b-4][6:7],byteorder='big')
@@ -32,9 +44,11 @@ try:
                         else:
                                 break;
                 
-        while b < len(lst):
-            # I Frame  distinguished and saved in different files.
-            if (lst[b])[:1]==b'\x65' and lst[b-1][5:6] == b'\x00':
+        while b < length:
+             H=int((b/length)*100)
+             PrintProgress(50,H)
+             # I Frame  distinguished and saved in different files.
+             if (lst[b])[:1]==b'\x65' and lst[b-1][5:6] == b'\x00':
                     meta=int.from_bytes((lst[b-1])[3:4],byteorder='big')
                     pmeta=int.from_bytes(lst[b-4][6:7],byteorder='big')
                     pseqmeta=int.from_bytes(lst[b-4][0:1],byteorder='big')
@@ -48,8 +62,8 @@ try:
                                     file=j
                     
                     nextImeta=0
-                    nextI=len(lst)
-                    for j in range(b+1,len(lst)):
+                    nextI=length
+                    for j in range(b+1,length):
                             nextImeta=int.from_bytes((lst[j-1])[3:4],byteorder='big')
                             if nextImeta == (meta+2)%256:
                                     nextI=j
@@ -65,7 +79,8 @@ try:
                                            plast4[k]=pmeta
                                            pseq[k]=pseqmeta
                                    pcount+=1
-            b+=1
+             b+=1
+        PrintProgress(50,100)
 finally:
     f.close()
     for i in range(d):
