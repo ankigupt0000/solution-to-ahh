@@ -4,4 +4,5 @@ echo "converting first file to mp4" && ffmpeg -loglevel -8 -i ..\output\file1.h2
 echo "converting second file to mp4" && ffmpeg  -loglevel -8 -i ..\output\file2.h264 -f mp4 ..\output\file2.mp && \
 echo "converting thrid file to mp4" && ffmpeg  -loglevel -8 -i ..\output\file3.h264 -f mp4 ..\output\file3.mp && \
 echo "converting forth file to mp4" && ffmpeg  -loglevel -8 -i ..\output\file4.h264 -f mp4 ..\output\file4.mp  && \
+echo "cleaning up" && rm ..\output\*.h264 && \
 echo "Convertion Completed please check ../output directory"
