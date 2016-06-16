@@ -1,3 +1,6 @@
+The script should run on windows environment having ffmpeg and py (python v3) interpreter in path. There is a shell script which does all the stuff. System should have enough memory so that program running can hold fill h264 video at a time.
+Final mp4 will be available in output folder.
+
 I was able to convert the whole "20140726_040000_ps.h264" file to single mp4 thorugh ffmpeg.
 It was having all four videos in the file and were appearing randomly on screen.
 
@@ -7,7 +10,7 @@ All frame starts with the same encoding.
 
 After breaking the file into frames (through python), I tried to reassemble the frames in sequential 1,2,3,4 order and crated four files which were having random feed from all the videos.
 
-Now it was necessary to identify which feed is for which video. I wrote every frame in single file but it didn't work well. Can't open single frame in VLC media player.
+Now it was necessary to identify which feed is for which video. I wrote one frame in one file but it didn't work well. Can't open single frame in VLC media player.
 
 Then to know information about frames, I searched a lot and got that ffprobe provide information about each frame in a video with following command:
 
@@ -15,7 +18,7 @@ ffprobe -show_frame 20140726_040000_ps.h264 | grep pict_type
 
 Then I started deleting one frame at a time to know what is the first I frame by running above command on edited file again and again.
 
-Then when I figured out first I frame I search the file in hex editor for all I frames through taking initial code of first frame, and I was able to get all I frame.
+Then when I figured out first I frame I search the file in hex editor for all I frames through taking initial code of first frame, and I was able to get all I frames.
 
 Then I searched for P frame and got information about it, I was able to get all P frames listed too.
 
