@@ -56,7 +56,7 @@ try:
                                     break;
 
                     for j in range(b+1,nextI):
-                        if (lst[j])[:1] ==b'\x61' and lst[j-1][5:6] == b'\x01' :
+                        if lst[j-1][5:6] == b'\x01' :
                            #pmeta=int.from_bytes(lst[j-1][6:7],byteorder='big')
                            pseqmeta=int.from_bytes(lst[j-1][0:1],byteorder='big')
                            for k in range(4):        
