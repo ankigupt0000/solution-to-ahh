@@ -21,13 +21,9 @@ Then I searched for P frame and got information about it, I was able to get all 
 
 Now the most important thing how to reassemble these I frame and P frame. Before every I frame there is 4 frames starting with '\x00\x00\x01' which are having meta data for I frame and for every P frame there is single frame before it starting with '\x00\x00\x01' for its metadata.
 
-I was able to relate the metadata of I frames.
-And was partially able to related different metadata of P frames but not completely.
+I was able to relate the metadata of I frames and P frames.
 
-To some extent I have decode the single .h264 file to multiple .h264 files with having only single video with proper I frame.
-The P frames at many places is making the video bad.
-Some P frames lost too because not able to relate the p frames.
+I figured out how to make proper distinct file for the format h264 with four files.
 
-Some different apporach through python may give a better solution.
+The link to files is available at output directory.
 
-I hope I can figure it out soon.
