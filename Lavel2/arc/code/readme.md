@@ -8,10 +8,10 @@ It has two chanllenges:
 By the way I managed to get first hard task done, am able to know and retrieve what the file contains through a trial version 
 of a software named Sira View Plus.
 
-Writing a codec for it is a big task, by the way seeing the hex of arc file shows that it contains same size frames. One can try to
-convert them but it is having a significant level of difficulty. I am uploading the videos exported by Sira View which are having
-watermark as I am only having trial version.
+I am uploading the videos exported by Sira View which are having watermark as I am only having trial version.
 
 Sira View Plus can be downloaded from below link:
 
 https://upload.siraview.com/app?operation=pubopp&st=dn&fn=upload.siraview.com$\SiraView\v3.4\114\SiraView+3.4.msi
+
+Run the uploaded batch file in order to convert h263 encoded mp4 to h264 encoded mp4.
